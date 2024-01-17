@@ -17,7 +17,14 @@ class ErrorCode:
     PHYSICAL_DELETE_COUNT = "I00002"
     PHYSICAL_ACCESS_TOKEN_DELETE_COUNT = "I00003"
     ATTRIBUTE_TYPE_ERROR = "A00001"
-
+    USER_EXIST = "U00001"
+    INTEGRITY_ERROR = "D00001"
+    NO_RESULT_FOUND = "D00002"
+    MULTIPLE_RESULTS_FOUND = "D00003"
+    INVALID_REQUEST_ERROR = "D00004"
+    DATA_ERROR = "D00005"
+    OPERATIONAL_ERROR = "D00006"
+    DECODE_TOKEN_ERROR = "J00001"
 
 ERROR_MESSAGE = {
     "E00001": "reCAPTCHA response error",
@@ -37,5 +44,12 @@ ERROR_MESSAGE = {
     "I00001": "Physical delete information",
     "I00002": "Physical delete count",
     "I00003": "Physical access token delete count",
-    "A00001": "Attribute error or type error occurred"
+    "A00001": "Attribute error or type error occurred",
+    "D00001": "Lỗi toàn vẹn dữ liệu",
+    "D00002": "Không có dữ liệu",
+    "D00003": "Tìm thấy nhiều dữ liệu",
+    "D00004": "Yêu cầu không hợp lệ",
+    "D00005": "Kiểu dữ liệu hợp lệ",
+    "D00006": "Lỗi thực thi",
+    "J00001": "Can't decode your token"
 }

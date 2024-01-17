@@ -5,37 +5,28 @@ Install with pip:
 ```
 $ pip install -r requirements.txt
 
-$ pip install -r requirements.txt
-
-$ pip install -r requirements.txt
-
-$ pip install -r requirements.txt
-
-$ pip install -r requirements.txt
-
-$ pip install -r requirements.txt
-
-$ pip install -r requirements.txt
 ```
 
 ## Flask Application Structure 
 ```
 .
 ├── app
-│   ├── controllers
-│   │   └── example_controller.py
-│   ├── models
-│   │   ├── __init__.py
-│   │   └── user.py
+│   ├── package
+│   │   ├── models
+│   │   └── views.py
 │   ├── routes
 │   │   ├── api
 │   │   │   ├──v1
-│   │   │   │  └──__init__.py
+│   │   │   │   ├──__init__.py
+│   │   │   │   └── urls.py
 │   │   │   ├──v2
-│   │   │   │  └──__init__.py
-│   │   │   └──__init__.py
+│   │   │   │   ├──__init__.py
+│   │   │   │   └── urls.py
+│   │   │   ├──__init__.py
+│   │   │   └── urls.py
 │   │   ├── web
-│   │   │   └──__init__.py
+│   │   │   ├──__init__.py
+│   │   │   └── urls.py
 │   │   └── __init__.py
 │   ├── static
 │   │   ├── css
