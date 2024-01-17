@@ -6,6 +6,9 @@ load_dotenv(dotenv_path)
 
 class Config:
 
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECURITY_PASSWORD_SALT = os.environ.get('SECURITY_PASSWORD_SALT')
+
     # Config FLASK_ENV
     FLASK_ENV = os.getenv('FLASK_ENV', 'production')
     # Biến DEBUG

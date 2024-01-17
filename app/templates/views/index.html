@@ -1,7 +1,15 @@
 {% extends 'layouts/base.html' %}
 
-{% block title %}Home - My App{% endblock %}
+{% block title %}Landing page{% endblock %}
 
 {% block content %}
-    <h1>Welcome to the Home Page</h1>
+    <h1>Index Page</h1>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
 {% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Register Form{% endblock %}
+
+{% block header %}
+    <link href={{ url_for('static', filename='css/sign-in.css') }} rel="stylesheet">
+{% endblock %}
+
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+
+
+{% block content %}
+    <main class="form-signin w-100 m-auto">
+        <form action="" method="POST">
+            <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingEmail" name="fullname"
+                       value="{{ form_data.fullname }}"
+                       placeholder="Cristiano Ronaldo">
+                <label for="floatingEmail">Full Name</label>
+            </div>
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingEmail" name="email"
+                       value="{{ form_data.email }}"
+                       placeholder="myemail@gmail.com">
+                <label for="floatingEmail">Email address</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingUser" name="username"
+                       value="{{ form_data.username }}" placeholder="username">
+                <label for="floatingUser">User name</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" name="password"
+                       value="{{ form_data.password }}">
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingRePassword" name="repassword"
+                       value="{{ form_data.repassword }}">
+                <label for="floatingRePassword">Re-password</label>
+            </div>
+
+            <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+            <div>Have account? <a href="{{ url_for('main.web.login') }}">Login</a></div>
+        </form>
+    </main>
+    </body>
+{% endblock %}
+
+
+{% block footer %}
+    <script src={{ url_for('static', filename='js/bootstrap.bundle.min.js') }}></script>
+{% endblock %}
+

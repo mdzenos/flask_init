@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}My App{% endblock %}</title>
-    <!-- Add any additional head elements or styles here -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link href={{ url_for('static', filename='css/bootstrap.min.css') }} rel="stylesheet">
+    <link href={{ url_for('static', filename='css/style.css') }} rel="stylesheet">
+    <title>{% block title %}Title{% endblock %}</title>
+    <div id="header">
+        {% block header %}{% endblock %}
+    </div>
 </head>
 <body>
-    <div id="header">
-        <!-- Header content goes here -->
-    </div>
     <div id="content">
         {% block content %}{% endblock %}
-        <!-- Main content goes here -->
     </div>
     <div id="footer">
-        <!-- Footer content goes here -->
+        {% block footer %}{% endblock %}
     </div>
 </body>
 </html>

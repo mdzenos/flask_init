@@ -10,4 +10,4 @@ class BaseModel(db.Model):
     deleted_at = db.Column(db.DateTime)
 
 # # Import models vào package
-from .user import User
+from .users import Users
