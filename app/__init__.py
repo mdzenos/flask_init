@@ -1,8 +1,9 @@
-from config.environment import Config
+from config.database import Config
 
 from flask import Flask
 from flask_migrate import Migrate
 
+from app.urls import api_bp, web_bp
 from app.models import db
 from app.models.users import Users
 from common.exceptions import handle_exception
@@ -14,12 +15,12 @@ def create_app():
     app.config.from_object(Config)
 
     # Register routes
-    from app.routes.urls import main_bp
-    app.register_blueprint(main_bp)
+    app.register_blueprint(api_bp)
+    app.register_blueprint(web_bp)
     
     # Init database
     db.init_app(app)
-    migrate = Migrate(app, db)
+    Migrate(app, db)
     
     # # Create database tables
     with app.app_context():

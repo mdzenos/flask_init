@@ -11,22 +11,12 @@ $ pip install -r requirements.txt
 ```
 .
 ├── app
-│   ├── package
-│   │   ├── models
-│   │   └── views.py
-│   ├── routes
-│   │   ├── api
-│   │   │   ├──v1
-│   │   │   │   ├──__init__.py
-│   │   │   │   └── urls.py
-│   │   │   ├──v2
-│   │   │   │   ├──__init__.py
-│   │   │   │   └── urls.py
-│   │   │   ├──__init__.py
-│   │   │   └── urls.py
-│   │   ├── web
-│   │   │   ├──__init__.py
-│   │   │   └── urls.py
+│   ├── authentication
+│   │   ├── urls.py
+│   │   ├── views.py
+│   │   └── __init__.py
+│   ├── models
+│   │   ├── users
 │   │   └── __init__.py
 │   ├── static
 │   │   ├── css
@@ -35,10 +25,13 @@ $ pip install -r requirements.txt
 │   ├── template
 │   │   ├── layouts
 │   │   └── views
+│   ├── urls.py
 │   └── __init__.py
 ├── common
 │   └── __init__.py
 ├── config
+│   ├── database.py
+│   ├── logging.py
 │   └── __init__.py
 ├── logs
 │   └── __init__.py

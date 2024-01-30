@@ -1,1 +1,1 @@
-from .environment import Config
+from .database import Config

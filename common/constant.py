@@ -33,3 +33,6 @@ RESPONSE_DESCRIPTION = {
     40002: 'Token not exist in database',
     40003: 'Illegal ip address'
 }
+
+API_V1_PREFIX = '/api/v1'
+API_V2_PREFIX = '/api/v2'

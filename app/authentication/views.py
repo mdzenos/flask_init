@@ -1,10 +1,10 @@
 import smtplib
 from email.mime.text import MIMEText
 from flask import jsonify, request
-from config.environment import Config
+from config.database import Config
 from app.models import Users
 from datetime import datetime
-
+import requests
 from cerberus import Validator
 from common.status_code import StatusCode
 from common.constant import user_login_schema, user_registration_schema, user_password_schema, username_schema, \
@@ -56,7 +56,6 @@ class Authentication:
     @staticmethod
     def login():
         data = request.json
-        print(request.method)
         validate = Validator(user_login_schema)
         if not validate.validate(data):
             return Authentication.construct_response('Validation Error', validate.errors, StatusCode.HTTP_BAD_REQUEST)

@@ -1,7 +1,7 @@
 import hashlib
 
 from common.exceptions import JWTException
-from config.environment import Config
+from config.database import Config
 from datetime import datetime, timedelta
 import jwt
 from jwt import PyJWTError

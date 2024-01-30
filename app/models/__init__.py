@@ -9,6 +9,7 @@ class BaseModel(db.Model):
     created_at = db.Column(db.DateTime, server_default=func.now())
     updated_at = db.Column(db.DateTime,  server_default=func.now(), onupdate=func.now())
     deleted_at = db.Column(db.DateTime)
+    is_deleted = db.Column(db.Boolean, default=False)
 
     def to_dict(self):
         obj_dict = {key: self.format_datetime(getattr(self, key))
