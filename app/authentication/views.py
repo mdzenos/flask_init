@@ -1,17 +1,24 @@
 import smtplib
-from email.mime.text import MIMEText
+import logging
+
 from flask import jsonify, request
-from config.database import Config
-from app.models import Users
 from datetime import datetime
-import requests
 from cerberus import Validator
+from email.mime.text import MIMEText
+
+from app.models import Users
+from config.database import Config
+from config.logging import setup_logger
+
 from common.status_code import StatusCode
 from common.constant import user_login_schema, user_registration_schema, user_password_schema, username_schema, \
     password_schema
 
 from common.encrypt import PassWordManager, JWTAppManager
 
+package_name = __package__.split('.')[1]
+setup_logger(package_name)
+logger = logging.getLogger(package_name)
 
 class Authentication:
     @staticmethod
@@ -55,6 +62,7 @@ class Authentication:
 
     @staticmethod
     def login():
+        logger.info('Start login')
         data = request.json
         validate = Validator(user_login_schema)
         if not validate.validate(data):
