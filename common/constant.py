@@ -1,4 +1,3 @@
-
 username_schema = {
     'username': {'type': 'string', 'minlength': 3, 'maxlength': 20, 'required': True}
 }
@@ -16,7 +15,7 @@ user_registration_schema = {
     'fullname': {'type': 'string', 'minlength': 3, 'maxlength': 20},
     'username': {'type': 'string', 'minlength': 3, 'maxlength': 20, 'required': True},
     'password': {'type': 'string', 'minlength': 6, 'required': True},
-    'email': {'type': 'string', 'maxlength': 30,'required': True, 'regex': r'\S+@\S+\.\S+'}
+    'email': {'type': 'string', 'maxlength': 30, 'required': True, 'regex': r'\S+@\S+\.\S+'}
 }
 
 user_login_schema = {
@@ -32,6 +31,16 @@ RESPONSE_DESCRIPTION = {
     40001: 'Missing CSRF-TOKEN',
     40002: 'Token not exist in database',
     40003: 'Illegal ip address'
+}
+
+LOG_TYPE = {
+    'START': 'info',
+    'STOP': 'info',
+    'INFO': 'info',
+    'DEBUG': 'debug',
+    'WARN': 'warning',
+    'ERROR': 'error',
+    'FATAL': 'critical'
 }
 
 API_V1_PREFIX = '/api/v1'
